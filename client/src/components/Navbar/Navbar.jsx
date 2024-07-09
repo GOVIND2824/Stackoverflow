@@ -35,54 +35,35 @@ const Navbar = ({ handleSlideIn }) => {
   return (
     <nav className="main-nav">
       <div className="navbar">
-        <button className="slide-in-icon" onClick={() => handleSlideIn()}>
-          <img src={bars} alt="bars" width="15" />
-        </button>
-        <div className="navbar-1">
-          <Link to="/" className="nav-item nav-logo">
-            <img src={logo} alt="logo" />
-          </Link>
-          <Link to="/" className="nav-item nav-btn res-nav">
-            About
-          </Link>
-          <Link to="/" className="nav-item nav-btn res-nav">
-            Products
-          </Link>
-          <Link to="/" className="nav-item nav-btn res-nav">
-            For Teams
-          </Link>
+          <Link to="/" className="nav-item nav-logo"><img src={logo} alt="logo" /></Link>
+          <Link to="/" className="nav-item nav-btn">About</Link>
+          <Link to="/" className="nav-item nav-btn">Products</Link>
+          <Link to="/" className="nav-item nav-btn">For Teams</Link>
           <form>
             <input type="text" placeholder="Search..." />
             <img src={search} alt="search" width="18" className="search-icon" />
           </form>
-        </div>
-        <div className="navbar-2">
           {User === null ? (
             <Link to="/Auth" className="nav-item nav-links">
               Log in
             </Link>
           ) : (
             <>
-              <Avatar
+              <Link
+                  to={`/Users/${User?.result?._id}`}
+                ><Avatar
                 backgroundColor="#009dff"
-                px="10px"
-                py="7px"
+                px="20px"
+                py="20px"
                 borderRadius="50%"
                 color="white"
-              >
-                <Link
-                  to={`/Users/${User?.result?._id}`}
-                  style={{ color: "white", textDecoration: "none" }}
-                >
-                  {User.result.name.charAt(0).toUpperCase()}
-                </Link>
-              </Avatar>
+                fontSize={20}
+              >{(User?.result?.name).charAt(0).toUpperCase()}</Avatar></Link>
               <button className="nav-item nav-links" onClick={handleLogout}>
                 Log out
               </button>
             </>
           )}
-        </div>
       </div>
     </nav>
   );

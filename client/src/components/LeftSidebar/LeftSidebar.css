@@ -40,6 +40,7 @@
     justify-content: flex-start;
     padding-left: 10px;
     transition: 0.2s;
+    min-width: 100px;
   }
   
   .side-nav-links:hover {
@@ -47,6 +48,7 @@
   }
   
   .active {
+    width: 100px;
     font-weight: bolder;
     color: black;
     background-color: rgb(225, 225, 225);

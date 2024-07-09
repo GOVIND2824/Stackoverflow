@@ -13,12 +13,9 @@ const LeftSidebar = ({ slideIn, handleSlideIn }) => {
   };
 
   return (
-    <div
-      className="left-sidebar"
-      style={slideIn ? slideInStyle : slideOutStyle}
-    >
+    <div className="left-sidebar" style={slideIn ? slideInStyle : slideOutStyle}>
       <nav className="side-nav">
-        <button onClick={() => handleSlideIn()} className="nav-btn">
+        <button onClick={handleSlideIn} className="nav-btn">
           <NavLink to="/" className="side-nav-links" activeclassname="active">
             <p>Home</p>
           </NavLink>
@@ -27,33 +24,19 @@ const LeftSidebar = ({ slideIn, handleSlideIn }) => {
           <div>
             <p>PUBLIC</p>
           </div>
-          <button onClick={() => handleSlideIn()} className="nav-btn">
-            <NavLink
-              to="/Questions"
-              className="side-nav-links"
-              activeclassname="active"
-            >
+          <button onClick={handleSlideIn} className="nav-btn">
+            <NavLink to="/Questions" className="side-nav-links" activeclassname="active">
               <img src={Globe} alt="Globe" />
               <p style={{ paddingLeft: "10px" }}> Questions </p>
             </NavLink>
           </button>
-          <button onClick={() => handleSlideIn()} className="nav-btn">
-            <NavLink
-              to="/Tags"
-              className="side-nav-links"
-              activeclassname="active"
-              style={{ paddingLeft: "40px" }}
-            >
+          <button onClick={handleSlideIn} className="nav-btn">
+            <NavLink to="/Tags" className="side-nav-links" activeclassname="active" style={{ paddingLeft: "40px" }}>
               <p>Tags</p>
             </NavLink>
           </button>
-          <button onClick={() => handleSlideIn()} className="nav-btn">
-            <NavLink
-              to="/Users"
-              className="side-nav-links"
-              activeclassname="active"
-              style={{ paddingLeft: "40px" }}
-            >
+          <button onClick={handleSlideIn} className="nav-btn">
+            <NavLink to="/Users" className="side-nav-links" activeclassname="active" style={{ paddingLeft: "40px" }}>
               <p>Users</p>
             </NavLink>
           </button>

@@ -40,6 +40,7 @@ const QuestionsDetails = () => {
             id,
             noOfAnswers: answerLength + 1,
             answerBody: Answer,
+            userId: User.result._id,
             userAnswered: User.result.name,
           })
         );
@@ -62,7 +63,7 @@ const QuestionsDetails = () => {
       alert("Login or Signup to up vote a question");
       Navigate("/Auth");
     } else {
-      dispatch(voteQuestion(id, "upVote"));
+      dispatch(voteQuestion(id, "upVote",User.result._id));
     }
   };
 
@@ -71,7 +72,7 @@ const QuestionsDetails = () => {
       alert("Login or Signup to down vote a question");
       Navigate("/Auth");
     } else {
-      dispatch(voteQuestion(id, "downVote"));
+      dispatch(voteQuestion(id, "downVote", User.result._id));
     }
   };
 
