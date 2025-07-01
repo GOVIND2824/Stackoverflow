@@ -9,7 +9,6 @@ import search from "../../assets/search-solid.svg";
 import Avatar from "../Avatar/Avatar";
 import "./Navbar.css";
 import { setCurrentUser } from "../../actions/currentUser";
-import bars from "../../assets/bars-solid.svg";
 
 const Navbar = ({ handleSlideIn }) => {
   const dispatch = useDispatch();
